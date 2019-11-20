@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkiToyWeb", "AkiToyWeb\AkiToyWeb.csproj", "{5EFF8FF3-8E22-4B8F-BA38-872CCA395445}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EFF8FF3-8E22-4B8F-BA38-872CCA395445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFF8FF3-8E22-4B8F-BA38-872CCA395445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFF8FF3-8E22-4B8F-BA38-872CCA395445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFF8FF3-8E22-4B8F-BA38-872CCA395445}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B569256-C264-41F4-947D-6A3CE1F0D3DB}
+	EndGlobalSection
+EndGlobal
