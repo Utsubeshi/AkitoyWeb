@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -26,8 +27,8 @@ namespace AkiToyWeb.Models
         public bool Eliminado { get; set; }
         public bool EliminadorPor { get; set; }
 
-        public Producto(int idProducto, string nombre, string detalle, double precioCosto, double precioVenta, double descuento, 
-                        int stock, DateTime fechaIngreso, DateTime fechaLanzamiento, double peso, string dimensiones, int idMarca, 
+        public Producto(int idProducto, string nombre, string detalle, double precioCosto, double precioVenta, double descuento,
+                        int stock, DateTime fechaIngreso, DateTime fechaLanzamiento, double peso, string dimensiones, int idMarca,
                         int idEstado, int idSerie, int idLinea, int idCategoria, bool eliminado, bool eliminadorPor)
         {
             this.idProducto = idProducto;
@@ -73,17 +74,34 @@ namespace AkiToyWeb.Models
             EliminadorPor = eliminadorPor;
         }
 
-        public Producto(int idProducto, string nombre, double precioVenta)
+        public Producto() { }
+
+        public Producto(String[] registro)
         {
-            this.idProducto = idProducto;
-            Nombre = nombre;
-            PrecioVenta = precioVenta;
+            this.idProducto = Int32.Parse(registro[0]);
+            this.Nombre = registro[1];
+            this.PrecioVenta = double.Parse(registro[2]);
+        }
+
+        public List<Producto> GetLista(DataTable dt)
+        {
+            if (dt.Rows.Count == 0) return null;
+            List<Producto> productos = new List<Producto>();
+            foreach (DataRow dr in dt.Rows)
+                productos.Add(new Producto(System.Array.ConvertAll(dr.ItemArray, x => x.ToString().Trim())));
+            return productos;
         }
     }
 
     public class ProductoDAO
     {
-        ClsBD ClsBD = new ClsBD("cnCineStar");
+        ClsBD ClsBD = new ClsBD("AkiToy");
+
+        public List<Producto> GetListaIndex()
+        {
+            ClsBD.Sentencia("exec ListaDePortada");
+            return new Producto().GetLista(ClsBD.GetDataTable());
+        }
 
     }
 

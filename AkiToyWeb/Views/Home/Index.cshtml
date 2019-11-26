@@ -1,6 +1,6 @@
-﻿
+﻿@model List<AkiToyWeb.Models.Producto>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "AkiToy - Figuras Colecionables de Animes y Juegos";
 }
 
 <!-- Home -->
@@ -99,7 +99,7 @@
                     <div class="categories_list_container">
                         <ul class="categories_list d-flex flex-row align-items-center justify-content-start">
                             <li><a href="categories.html">nuevos productos</a></li>
-                            <li><a href="categories.html">reservas</a></li>
+                            <li><a href="categories.html">pre-ordenar</a></li>
                             <li><a href="categories.html">usados</a></li>
                         </ul>
                     </div>
@@ -119,118 +119,19 @@
                     <div class="products_container grid">
 
                         <!-- Product -->
-                        <div class="product grid-item hot">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_1.jpg" alt="">
-                                    <div class="product_tag">hot</div>
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">long red shirt</a></div>
-                                    <div class="product_price">$39.90</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
+                        @foreach (var producto in Model)
+                        {
                         <div class="product grid-item">
                             <div class="product_inner">
-                                <div class="product_image"><img src="../../images/product_2.jpg" alt=""></div>
+                                <div class="product_image"><img src="../../images/productos/product_@(producto.idProducto).jpg" alt=""></div>
                                 <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">hype grey shirt</a></div>
-                                    <div class="product_price">$19.50</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
+                                    <div class="product_title"><a href="product.html">@(producto.Nombre)</a></div>
+                                    <div class="product_price">S/. @(producto.PrecioVenta)</div>
+                                    <div class="product_button ml-auto mr-auto trans_200"><a href="/Producto/BuscarProducto?id=@(producto.idProducto)">añadir</a></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Product -->
-                        <div class="product grid-item sale">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_3.jpg" alt="">
-                                    <div class="product_tag">sale</div>
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">long sleeve jacket</a></div>
-                                    <div class="product_price">$32.20<span>RRP 64.40</span></div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product grid-item">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_4.jpg" alt="">
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">denim men shirt</a></div>
-                                    <div class="product_price">$59.90</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product grid-item">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_5.jpg" alt="">
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">long red shirt</a></div>
-                                    <div class="product_price">$79.90</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product grid-item new">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_6.jpg" alt="">
-                                    <div class="product_tag">new</div>
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">hype grey shirt</a></div>
-                                    <div class="product_price">$59.90</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product grid-item">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_7.jpg" alt="">
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">long sleeve jacket</a></div>
-                                    <div class="product_price">$15.90</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product -->
-                        <div class="product grid-item sale">
-                            <div class="product_inner">
-                                <div class="product_image">
-                                    <img src="../../images/product_8.jpg" alt="">
-                                    <div class="product_tag">sale</div>
-                                </div>
-                                <div class="product_content text-center">
-                                    <div class="product_title"><a href="product.html">denim men shirt</a></div>
-                                    <div class="product_price">$43.99<span>RRP 64.40</span></div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
-                                </div>
-                            </div>
-                        </div>
-
+                        }
                     </div>
                 </div>
             </div>
