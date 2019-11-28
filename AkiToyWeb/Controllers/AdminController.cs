@@ -3,18 +3,22 @@ using System.Web.Mvc;
 
 namespace AkiToyWeb.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
         private ProductoDAO productoDAO;
 
-        public HomeController()
+        public AdminController()
         {
             productoDAO = new ProductoDAO();
         }
-        // GET: Home
         public ActionResult Index()
         {
-            var model = productoDAO.GetListaIndex();
+            return View();
+        }
+
+        public ActionResult ListaProducto()
+        {
+            var model = productoDAO.VerProductos();
             return View(model);
         }
     }

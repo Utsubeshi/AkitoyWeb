@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace AkiToyWeb.Models
 {
@@ -40,5 +41,26 @@ namespace AkiToyWeb.Models
             cmd.CommandText = SQL;
         }
 
+        internal void getDropDownList(DropDownList cboCombo)
+        {
+            getDropDownList(cboCombo, null);
+        }
+
+        internal void getDropDownList(DropDownList cboCombo, string strTexto)
+        {
+            DataTable dt = GetDataTable();
+
+            if (strTexto != null)
+            {
+                DataRow dr = dt.NewRow();
+                dr.ItemArray = new object[] { -1, strTexto };
+                dt.Rows.InsertAt(dr, 0);
+            }
+            cboCombo.DataSource = dt;
+            cboCombo.DataValueField = dt.Columns[0].ColumnName;
+            cboCombo.DataTextField = dt.Columns[1].ColumnName;
+        }
+
     }
+    
 }

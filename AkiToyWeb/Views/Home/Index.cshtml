@@ -1,4 +1,5 @@
 ﻿@model List<AkiToyWeb.Models.Producto>
+
 @{
     ViewBag.Title = "AkiToy - Figuras Colecionables de Animes y Juegos";
 }
@@ -127,7 +128,7 @@
                                 <div class="product_content text-center">
                                     <div class="product_title"><a href="product.html">@(producto.Nombre)</a></div>
                                     <div class="product_price">S/. @(producto.PrecioVenta)</div>
-                                    <div class="product_button ml-auto mr-auto trans_200"><a href="/Producto/BuscarProducto?id=@(producto.idProducto)">añadir</a></div>
+                                    <div class="product_button ml-auto mr-auto trans_200"><a href="/Producto/AddCarrito?id=@(producto.idProducto)">añadir</a></div>
                                 </div>
                             </div>
                         </div>
