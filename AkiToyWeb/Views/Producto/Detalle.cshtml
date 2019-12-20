@@ -1,0 +1,171 @@
+﻿@model AkiToyWeb.Models.Producto
+
+@{
+    ViewBag.Title = "Detalles del producto";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+    <div class="container" style="padding-top: 60px">
+        <div style="padding-bottom: 10px">
+            
+                <h2>@Model.Nombre</h2>
+    </div>
+    </div>
+        <div class="container">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayName("Codigo del producto")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.idProducto)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Detalle)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PrecioCosto)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PrecioCosto)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PrecioVenta)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PrecioVenta)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descuento)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Descuento)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaIngreso)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FechaIngreso)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaLanzamiento)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FechaLanzamiento)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Peso)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Peso)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Dimensiones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Dimensiones)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Marca")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Marca.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Estado")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Estado.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Serie")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Serie.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Linea")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Linea.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Categoria")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Categoria.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Eliminado)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Eliminado)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EliminadorPor)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EliminadorPor)
+                </dd>
+
+            </dl>
+        </div>
+
+        <div class="container">
+            <p>
+                @Html.ActionLink("Editar", "Editar", new { id = Model.idProducto }) |
+                @Html.ActionLink("Regresar a la lista", "Index")
+            </p>
+
+        </div>
+    

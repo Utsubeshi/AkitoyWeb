@@ -48,7 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -180,6 +188,16 @@
     <Content Include="Images\view_1.png" />
     <Content Include="Images\view_2.png" />
     <Content Include="Images\view_3.png" />
+    <Content Include="Models\AkitoyDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AkitoyDB.edmx</DependentUpon>
+      <LastGenOutput>AkitoyDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AkitoyDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AkitoyDB.edmx</DependentUpon>
+      <LastGenOutput>AkitoyDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\blog.js" />
     <Content Include="Scripts\bootstrap-4.1.3\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap-4.1.3\popper.js" />
@@ -190,6 +208,13 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\AkitoyDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AkitoyDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AkitoyDB.edmx.diagram">
+      <DependentUpon>AkitoyDB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cart.js" />
     <Content Include="Scripts\categories.js" />
@@ -216,13 +241,103 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Datos\CategoriaAdmin.cs" />
+    <Compile Include="Datos\EstadoAdmin.cs" />
+    <Compile Include="Datos\LineaAdmin.cs" />
+    <Compile Include="Datos\MarcaAdmin.cs" />
+    <Compile Include="Datos\ProductoAdmin.cs" />
+    <Compile Include="Datos\SerieAdmin.cs" />
+    <Compile Include="Datos\UsuarioAdmin.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\clsBD.cs" />
-    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AkitoyDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AkitoyDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AkitoyDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AkitoyDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AkitoyDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categoria.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Courier.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departamento.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Direccion.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distrito.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Envio.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estado.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetProductoPorId_Result.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Linea.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ListaDePortada_Result.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Marca.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pago.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pedido.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Producto.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Provincia.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reserva.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Serie.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ListaProductos_Result.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>AkitoyDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -240,10 +355,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\Detalle.cshtml" />
+    <Content Include="Views\Producto\Crear.cshtml" />
+    <Content Include="Views\Producto\Editar.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\ListaProducto.cshtml" />
+    <Content Include="Views\Admin\Editar.cshtml" />
+    <Content Include="Views\Admin\Crear.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -253,6 +373,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Vendedor\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.7\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
@@ -264,6 +385,9 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

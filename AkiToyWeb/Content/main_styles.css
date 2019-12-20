@@ -289,14 +289,14 @@ section
 3. Sidebar
 *********************************/
 
-.sidebar
-{
+.sidebar {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 263px;
 	height: 100vh;
-	background: #0049b0;
+	background: rgb(7,93,209);
+	background: linear-gradient(195deg, rgba(7,93,209,1) 32%, rgba(14,167,198,1) 100%);
 	z-index: 100;
 }
 .info
@@ -671,15 +671,15 @@ section
 4. Header
 *********************************/
 
-.header
-{
+.header {
 	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 70px;
-	background: #0049b0;
+	background: rgb(7,93,209);
+	background: linear-gradient(195deg, rgba(7,93,209,1) 32%, rgba(14,167,198,1) 100%);
 	z-index: 100;
 }
 .header_content
@@ -792,14 +792,14 @@ section
 5. Menu
 *********************************/
 
-.menu /*menu mobile*/
-{
+.menu /*menu mobile*/ {
 	position: fixed;
 	top: 0;
 	left: -400px;
 	width: 400px;
 	height: 100vh;
-	background: #0049b0;
+	background: rgb(7,93,209);
+	background: linear-gradient(195deg, rgba(7,93,209,1) 32%, rgba(14,167,198,1) 100%);
 	z-index: 101;
 	padding-right: 60px;
 	padding-top: 87px;

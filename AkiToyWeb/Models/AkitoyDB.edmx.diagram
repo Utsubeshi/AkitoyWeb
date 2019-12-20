@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9ad2e9ff39cb4cfa9c7114be5af96fcc" Name="Diagram1">
+        <EntityTypeShape EntityType="AkiToyModel.Categoria" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Cliente" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Courier" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Departamento" Width="1.5" PointX="1.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Direccion" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Distrito" Width="1.5" PointX="1.5" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Envio" Width="1.5" PointX="8" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Estado" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Linea" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Marca" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Pago" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Pedido" Width="1.5" PointX="10.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Producto" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Provincia" Width="1.5" PointX="1.5" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Reserva" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Serie" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AkiToyModel.Usuario" Width="1.5" PointX="5.75" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="AkiToyModel.FK__Producto__idCate__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Cliente__idDirec__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Pedido__idClient__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Reserva__idClien__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Envio__idCourier__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Direccion__idDpt__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Provincia__idDpt__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Direccion__idDis__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Direccion__idPro__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Distrito__idProv__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Envio__idUsuario__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Pedido__idEnvio__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Producto__idEsta__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Producto__idLine__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Producto__idMarc__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Reserva__idPago__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Producto__idSeri__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="AkiToyModel.FK__Reserva__idProdu__619B8048" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

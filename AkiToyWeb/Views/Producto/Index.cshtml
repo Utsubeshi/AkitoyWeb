@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AkiToyWeb.Models.Producto>
+
+@{
+    ViewBag.Title = "Akitoy - Productos registrados";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+    <div class="home2">
+        <div class="home_container">
+            <div class="home_content">
+                <div class="home_title2">Productos registrados</div>
+                <div class="breadcrumbs">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href="@Url.Action("Crear" , "Producto") " class="btn btn-primary"><i class="fas fa-plus"> Nuevo Producto</i></a>
+    </div>
+    <br />
+    <br />
+    <div class="container table-responsive">
+        <table class="table table-striped" cellspacing="0" width="100%" id="example">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayName("ID")
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrecioVenta)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Stock)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Marca)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Serie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Linea)
+                    </th>
+                    <th class="text-nowrap"></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioVenta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca.Detalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado.Detalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Serie.Detalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Linea.Detalle)
+                    </td>
+                    <td class="text-nowrap">
+                        <a href="@Url.Action("Detalle" , "Producto", new { id = item.idProducto }) " class="btn btn-success"><i class="fas fa-eye"> </i></a>
+                        <a href="@Url.Action("Editar" , "Producto", new { id = item.idProducto }) " class="btn btn-primary"><i class="fas fa-edit"> </i></a>
+                        <a href="@Url.Action("Eliminar" , "Producto",new { id = item.idProducto }) " class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
