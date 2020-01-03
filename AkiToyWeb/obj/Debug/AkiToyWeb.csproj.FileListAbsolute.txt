@@ -224,3 +224,10 @@ C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\obj\Debug\AkiToyWeb.cspr
 C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\obj\Debug\AkiToyWeb.csproj.CopyComplete
 C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\obj\Debug\AkiToyWeb.dll
 C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\obj\Debug\AkiToyWeb.pdb
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\Antlr3.Runtime.dll
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\Newtonsoft.Json.dll
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\System.Web.Optimization.dll
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\WebGrease.dll
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\Antlr3.Runtime.pdb
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\Newtonsoft.Json.xml
+C:\reposASP\Proyecto AkiToy\AkiToyWeb - copia\AkiToyWeb\bin\System.Web.Optimization.xml

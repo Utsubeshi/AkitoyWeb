@@ -40,6 +40,7 @@ namespace AkiToyWeb.Controllers
             ViewBag.Estados = estado.ComboBoxEstados();
             ViewBag.Categorias = categoria.ComboBoxCategorias();
             ViewBag.Marcas = marca.ComboBoxMarcas();
+            /*ViewData["fechaActual"] = DateTime.Now.ToString();*/
             return View();
             
                 
@@ -48,6 +49,7 @@ namespace AkiToyWeb.Controllers
         public ActionResult Guardar(Producto producto)
         {
             productoAdmin.Guardar(producto);
+            
             return View("Index" , productoAdmin.Consultar());
         }
 
@@ -69,9 +71,13 @@ namespace AkiToyWeb.Controllers
 
         public ActionResult Eliminar(int id)
         {
-            Producto producto = productoAdmin.Consultar(id);
-            productoAdmin.Eliminar(producto);
+            if (id != null)
+            {
+                Producto producto = productoAdmin.Consultar(id);
+                productoAdmin.Eliminar(producto);
+            }
             return View("Index", productoAdmin.Consultar());
+            
         }
 
     }

@@ -61,6 +61,7 @@ namespace AkiToyWeb.Datos
             {
                 contexto.Producto.Add(producto);
                 contexto.SaveChanges();
+                producto = null;
             }
         }
 

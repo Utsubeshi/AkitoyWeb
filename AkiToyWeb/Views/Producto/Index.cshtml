@@ -80,9 +80,9 @@
                         @Html.DisplayFor(modelItem => item.Linea.Detalle)
                     </td>
                     <td class="text-nowrap">
-                        <a href="@Url.Action("Detalle" , "Producto", new { id = item.idProducto }) " class="btn btn-success"><i class="fas fa-eye"> </i></a>
+                        <a href="@Url.Action("Detalle" , "Producto", new { id = item.idProducto } ) " class="btn btn-success"><i class="fas fa-eye"> </i></a>
                         <a href="@Url.Action("Editar" , "Producto", new { id = item.idProducto }) " class="btn btn-primary"><i class="fas fa-edit"> </i></a>
-                        <a href="@Url.Action("Eliminar" , "Producto",new { id = item.idProducto }) " class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                        <a href="@Url.Action("Eliminar" , "Producto",new { id = item.idProducto } ) " class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
             }

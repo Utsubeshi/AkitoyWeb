@@ -75,7 +75,8 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.FechaIngreso)
+                    @if(Model.FechaIngreso != null) {@Model.FechaIngreso.Value.ToString("dd/MM/yyyy")}
+                    else{@Html.DisplayFor(Model => Model.FechaIngreso)}
                 </dd>
 
                 <dt>
@@ -83,7 +84,8 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.FechaLanzamiento)
+                    @if(Model.FechaLanzamiento != null) {@Model.FechaLanzamiento.Value.ToString("MMMM yyyy")}
+                    else {@Html.DisplayFor(Model => Model.FechaLanzamiento)}
                 </dd>
 
                 <dt>
@@ -140,22 +142,6 @@
 
                 <dd>
                     @Html.DisplayFor(model => model.Categoria.Detalle)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Eliminado)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Eliminado)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.EliminadorPor)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.EliminadorPor)
                 </dd>
 
             </dl>

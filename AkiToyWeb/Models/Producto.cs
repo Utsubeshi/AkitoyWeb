@@ -29,26 +29,37 @@ namespace AkiToyWeb.Models
         public string Nombre { get; set; }
         [Required]
         public string Detalle { get; set; }
+        [DisplayName("Precio costo")]
         [Required]
         [Range(0, float.MaxValue, ErrorMessage = "Please enter valid a Number")]
         public Nullable<decimal> PrecioCosto { get; set; }
+        [DisplayName("Precio de venta")]
         [Required]
         public Nullable<decimal> PrecioVenta { get; set; }
         public Nullable<decimal> Descuento { get; set; }
         [Required]
         public Nullable<int> Stock { get; set; }
+        [DisplayName("Fecha de registro")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> FechaIngreso { get; set; }
+        [DisplayName("Fecha de lanzamiento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> FechaLanzamiento { get; set; }
+        [DisplayName("Peso en Kg.")]
         public Nullable<decimal> Peso { get; set; }
+        [DisplayName("Altura en mm.")]
         public string Dimensiones { get; set; }
+        [DisplayName("Marca")]
         public Nullable<int> idMarca { get; set; }
+        [DisplayName("Estado del producto")]
         public Nullable<int> idEstado { get; set; }
+        [DisplayName("Serie")]
         public Nullable<int> idSerie { get; set; }
+        [DisplayName("Linea")]
         public Nullable<int> idLinea { get; set; }
+        [DisplayName("Categoria")]
         public Nullable<int> idCategoria { get; set; }
         public Nullable<bool> Eliminado { get; set; }
         public Nullable<int> EliminadorPor { get; set; }
