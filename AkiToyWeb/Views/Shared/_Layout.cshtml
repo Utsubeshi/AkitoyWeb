@@ -13,7 +13,8 @@
     <link rel="stylesheet" type="text/css" href="~/Content/OwlCarousel/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Content/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/responsive.css">
-  
+    <link rel="stylesheet" type="text/css" href="~/Content/cart_responsive.css">
+    
 </head>
 <body>
 
@@ -30,7 +31,7 @@
                 <!-- Navigation TO DO -->
                 <nav class="header_nav">
                     <ul class="d-flex flex-row align-items-center justify-content-start">
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="@Url.Action("Index" , "Home")">Inicio</a></li>
                         <li><a href="#">Categorias</a></li>
                         <li><a href="#">Reservas</a></li>
                         <li><a href="#">Usados</a></li>
@@ -74,7 +75,7 @@
             </div>
             <nav class="menu_nav">
                 <ul class="menu_mm">
-                    <li class="menu_mm"><a href="index.html">inicio</a></li>
+                    <li class="menu_mm"><a href="@Url.Action("Index" , "Home")">inicio</a></li>
                     <li class="menu_mm"><a href="#">categorias</a></li>
                     <li class="menu_mm"><a href="#">reservas</a></li>
                     <li class="menu_mm"><a href="#">usados</a></li>
@@ -113,7 +114,7 @@
             <!-- Sidebar Navigation MENU FULL-->
             <nav class="sidebar_nav">
                 <ul>
-                    <li><a href="index.html">inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="@Url.Action("Index" , "Home")">inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                     <li><a href="#">categorias<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                     <li><a href="#">reservas<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                     <li><a href="#">usados<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
@@ -133,20 +134,29 @@
             <!-- Cart -->
             <div class="cart d-flex flex-row align-items-center justify-content-start">
                 <div class="cart_icon">
-                    <a href="cart.html">
+                    <a href="@Url.Action("VerCarrito" , "Carrito" )">
                         <img src="../../images/cart.png" alt="">
-                        <div class="cart_num">2</div>
+                        <div class="cart_num">
+                            @if (@Session["Cantidad"] == null)
+                            {<text>0</text>}
+                            @Session["Cantidad"]
+                        </div>
                     </a>
                 </div>
                 <div class="cart_text">total</div>
-                <div class="cart_price">S/. 39.99</div>
+                <div class="cart_price">
+                    S/.
+                    @if (@Session["Total"] == null)
+                    {<text>0</text>}
+                    @String.Format("{0:n0}", @Session["Total"])
+                </div>
             </div>
         </div>
 
         <div class="">
             @RenderBody()
         </div>
-        
+
         <!-- Newsletter -->
 
         <div class="newsletter">
@@ -318,7 +328,7 @@
             </div>
         </footer>
     </div> <!--final del super container-->
-       
+
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/bootstrap-4.1.3/bootstrap.min.js"></script>
     <script src="~/Scripts/bootstrap-4.1.3/popper.js"></script>
@@ -333,5 +343,7 @@
     <script src="~/Scripts/isotope/isotope.pkgd.min.js"></script>
     <script src="~/Scripts/isotope/fitcolumns.js"></script>
     <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/cart.js"></script>
+    <script src="https://kit.fontawesome.com/8708494ea4.js" crossorigin="anonymous"></script>
 </body>
 </html>

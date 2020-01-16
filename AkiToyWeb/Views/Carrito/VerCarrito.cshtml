@@ -1,0 +1,144 @@
+﻿@model List<AkiToyWeb.Models.Producto>
+@{
+    ViewBag.Title = "Carrito";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Cart -->
+
+<div class="cart_section">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cart_container">
+
+                        <!-- Cart Bar -->
+                        <div class="cart_bar">
+                            <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-start">
+                                <li>Producto</li>
+                                <li>Linea</li>
+                                <li>Marca</li>
+                                <li>Estado</li>
+                                <li>Precio</li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <div class="cart_items">
+                            <ul class="cart_items_list">
+
+                                @if ( Session["Carrito"] != null ) {
+
+                                    foreach (var producto in Model)
+                                    {
+                                        <!-- Cart Item -->
+                                        <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                            <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                                <div><div class="product_image3"><img src="../../images/productos/product_@(producto.idProducto).jpg" alt=""></div></div>
+                                                <div class="product_name3"><a href="product.html">@producto.Nombre</a></div>
+                                            </div>
+                                            <div class="product_color text-lg-center product_text"><span>Linea: </span>@producto.Linea.Detalle</div>
+
+                                            <div class="product_price text-lg-center product_text"><span>Marca: </span>@producto.Marca.Detalle</div>
+
+                                            <div class="product_price text-lg-center product_text"><span>Estado: </span>@producto.Estado.Detalle</div>
+
+                                            <div class="product_price text-lg-center product_text"><span>Precio: </span>S/. @String.Format("{0:n0}", producto.PrecioVenta)</div>
+
+                                            <div class="product_size text-lg-center product_text"><a href="@Url.Action("Eliminar" , "Carrito", new { id = producto.idProducto })" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></div>
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                        <div class="product_name3"> Carrito Vacio! debes agregar algun producto</div>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+
+                        <!-- Cart Buttons -->
+                        <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+                            <div class="cart_buttons_inner ml-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                <div class="button button_continue trans_200"><a href="@Url.Action("Index" , "Home")">Continuar comprando</a></div>
+                                <div class="button button_clear trans_200"><a href="@Url.Action("Limpiar" , "Carrito")">Limpiar carrito</a></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_container cart_extra_container">
+        <div class="container">
+            <div class="row">
+
+                <!-- Shipping & Delivery -->
+                <div class="col-xxl-6">
+                    <div class="cart_extra cart_extra_1">
+                        <div class="cart_extra_content cart_extra_coupon">
+                            <div class="shipping">
+                                <div class="cart_extra_title">Metodo de envio</div>
+                                <ul>
+                                    <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                        <label class="radio_container">
+                                            <input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
+                                            <span class="radio_mark"></span>
+                                            <span class="radio_text">Envio Olva - Provincia</span>
+                                        </label>
+                                        <div class="shipping_price ml-auto">Por definir</div>
+                                    </li>
+                                    <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                        <label class="radio_container">
+                                            <input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
+                                            <span class="radio_mark"></span>
+                                            <span class="radio_text">Entrega personal </span> <br />
+                                            <span> - Estaciones del tren </span><br />
+                                            <span> - Centro Civico </span><br />
+                                            <span> - CC Arenales</span>
+                                        </label>
+                                        <div class="shipping_price ml-auto">Gratis</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Total -->
+                <div class="col-xxl-6">
+                    <div class="cart_extra cart_extra_2">
+                        <div class="cart_extra_content cart_extra_total">
+                            <div class="cart_extra_title">Total</div>
+                            <ul class="cart_extra_total_list" >
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_extra_total_title">Subtotal</div>
+                                    <div class="cart_extra_total_value ml-auto">
+                                        S/.
+                                        <span id="subtotal">
+                                            @if (@Session["Total"] == null)
+                                            {<text>0.00</text>}
+                                            @String.Format("{0:n0}", @Session["Total"])
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_extra_total_title">Envio</div>
+                                    <div class="cart_extra_total_value ml-auto">S/. <span id="costoEnvio">0.00</span></div>
+                                </li>
+                            </ul>
+                            <div class="checkout_button trans_200"><a href="checkout.html">checkout</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

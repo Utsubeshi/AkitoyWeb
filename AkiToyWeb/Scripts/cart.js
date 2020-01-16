@@ -35,6 +35,7 @@ $(document).ready(function()
 
 	initMenu();
 	initQty();
+	Suma();
 
 	/* 
 
@@ -128,4 +129,11 @@ $(document).ready(function()
 		}
 	}
 
+
+	
+
 });
+
+
+
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AkiToyWeb.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,11 @@ namespace AkiToyWeb.Controllers
 {
     public class HomeController : Controller
     {
+        ProductoAdmin productoAdmin = new ProductoAdmin();
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(productoAdmin.Consultar());
         }
     }
 }

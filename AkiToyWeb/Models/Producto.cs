@@ -33,6 +33,7 @@ namespace AkiToyWeb.Models
         [Required]
         [Range(0, float.MaxValue, ErrorMessage = "Please enter valid a Number")]
         public Nullable<decimal> PrecioCosto { get; set; }
+        
         [DisplayName("Precio de venta")]
         [Required]
         public Nullable<decimal> PrecioVenta { get; set; }
