@@ -13,6 +13,7 @@ namespace AkiToyWeb.Controllers
         private ProductoAdmin productoAdmin = new ProductoAdmin();
 
         // GET: Carrito
+        
         public ActionResult Agregar(int id)
         {
             Producto producto = productoAdmin.Consultar(id);

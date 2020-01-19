@@ -121,11 +121,13 @@
                                     <div class="cart_extra_total_title">Subtotal</div>
                                     <div class="cart_extra_total_value ml-auto">
                                         S/.
-                                        <span id="subtotal">
-                                            @if (@Session["Total"] == null)
-                                            {<text>0.00</text>}
-                                            @String.Format("{0:n0}", @Session["Total"])
-                                        </span>
+                                        <div id="pagar">
+                                            <span>
+                                                @if (@Session["Total"] == null)
+                                                {<text>0.00</text>}
+                                                @String.Format("{0:n0}", @Session["Total"])
+                                            </span>
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
@@ -133,7 +135,7 @@
                                     <div class="cart_extra_total_value ml-auto">S/. <span id="costoEnvio">0.00</span></div>
                                 </li>
                             </ul>
-                            <div class="checkout_button trans_200"><a href="checkout.html">checkout</a></div>
+                            <div class="checkout_button trans_200"><a href="checkout.html" id="buyButton">checkout</a></div>
                         </div>
                     </div>
                 </div>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/cart_responsive.css">
-    
+
 </head>
 <body>
 
@@ -345,5 +345,46 @@
     <script src="~/Scripts/custom.js"></script>
     <script src="~/Scripts/cart.js"></script>
     <script src="https://kit.fontawesome.com/8708494ea4.js" crossorigin="anonymous"></script>
+    <!-- Incluyendo Culqi Checkout -->
+    <script src="https://checkout.culqi.com/js/v3"></script>
+    <script>
+        Culqi.publicKey = 'pk_test_Kd3gwqwwXEHBBj9r';
+    </script>
+
+    <script>              
+
+        $(document).ready(function () {
+           var total = $('#pagar span').text().trim() + '00';
+
+            Culqi.settings({
+            title: 'AkiToy',
+            currency: 'PEN',
+            description: 'Tienda de figuras colecionables',
+            amount: total
+        });
+        });
+
+        
+
+        $('#buyButton').on('click', function (e) {
+            // Abre el formulario con la configuración en Culqi.settings
+            Culqi.open();
+            e.preventDefault();
+        });
+
+        function culqi() {
+            if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+                var token = Culqi.token.id;
+                alert('Se ha creado un token:' + token);
+                //En esta linea de codigo debemos enviar el "Culqi.token.id"
+                //hacia tu servidor con Ajax
+            } else { // ¡Hubo algún problema!
+                // Mostramos JSON de objeto error en consola
+                console.log(Culqi.error);
+                alert(Culqi.error.user_message);
+            }
+        };
+  
+    </script>
 </body>
 </html>

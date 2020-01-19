@@ -136,6 +136,7 @@
     <Content Include="Content\checkout.css" />
     <Content Include="Content\checkout_responsive.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\main_styles.css" />
     <Content Include="Content\OwlCarousel\animate.css" />
     <Content Include="Content\OwlCarousel\owl.carousel.css" />
