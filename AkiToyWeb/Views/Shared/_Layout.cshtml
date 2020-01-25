@@ -48,9 +48,13 @@
 
                     <div class="cart d-flex flex-row align-items-center justify-content-start">
                         <div class="cart_icon">
-                            <a href="cart.html">
+                            <a href="@Url.Action("VerCarrito" , "Carrito" )">
                                 <img src="../../images/cart.png" alt="">
-                                <div class="cart_num">2</div>
+                                <div class="cart_num">
+                                    @if (@Session["Cantidad"] == null)
+                                    {<text>0</text>}
+                                    @Session["Cantidad"]
+                                </div>
                             </a>
                         </div>
                     </div>
